@@ -26,5 +26,7 @@ jobs:
       - name: Run C in sub folder
         run: |
           cd folder1
+          pwd
+          ls
           ./main_sub
       - run: echo "🎉 Run successful"
