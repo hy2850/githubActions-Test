@@ -27,8 +27,7 @@ jobs:
 
       - name: Set up QEMU
         run: |
-          sudo apt-get -y install qemu-system-x86_64
-          qemu-x86_64 --version
+          sudo apt-get -y install qemu-system-x86
 
       - name: Build pintos
         run: |
@@ -43,3 +42,5 @@ jobs:
           cd threads/build
           pintos -- -q run alarm-single
       - run: echo "🎉 Run successful"
+
+      - run: qemu-x86_64 --version
