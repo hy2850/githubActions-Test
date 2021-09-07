@@ -31,29 +31,14 @@ jobs:
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
-
-  build-pintos:
-    needs: setup-env
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
+      - run: echo "🎉 QEMU setup successful"
 
       - name: Build pintos
         run: |
           cd pintos-kaist/threads
           make
       - run: echo "🎉 Build successful"
-
-  run-pintos:
-    needs: build-pintos
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
+      
       - name: Run pintos
         run: |
           cd pintos-kaist
