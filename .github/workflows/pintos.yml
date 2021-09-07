@@ -26,12 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up QEMU
-        id: qemu
-        uses: docker/setup-qemu-action@v1
-        with:
-          image: tonistiigi/binfmt:latest
-          platforms: all
-      - run: echo "🎉 QEMU setup successful"
+        run: |
+          sudo apt-get -y install qemu=1:2.11+dfsg-1ubuntu7.36
+          qemu-x86_64 --version | grep "1:2.11+dfsg-1ubuntu7.36"
 
       - name: Build pintos
         run: |
