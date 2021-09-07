@@ -27,8 +27,8 @@ jobs:
 
       - name: Set up QEMU
         run: |
-          sudo apt-get -y install qemu=1:2.11+dfsg-1ubuntu7.36
-          qemu-x86_64 --version | grep "1:2.11+dfsg-1ubuntu7.36"
+          sudo apt-get -y install qemu-system-x86_64
+          qemu-x86_64 --version
 
       - name: Build pintos
         run: |
