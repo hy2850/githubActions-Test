@@ -42,5 +42,3 @@ jobs:
           cd threads/build
           pintos -- -q run alarm-single
       - run: echo "🎉 Run successful"
-
-      - run: qemu-x86_64 --version
