@@ -1,5 +1,7 @@
 name: C compile and run testing
-on: [push]
+on: 
+  push:
+    branches: [test_pushAction]
 jobs:
   root-dir:
     runs-on: ubuntu-latest
@@ -18,18 +20,11 @@ jobs:
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Move to folder
-        run : |
-          pwd
-          cd folder1
-          pwd
       - name: Compile C in sub folder
-        run: |
-          pwd
-          cd folder1
-          pwd
-          gcc folder_test.c -o main_sub
+        run: gcc /folder1/folder_test.c -o main_sub
       - run: echo "🎉 Compile successful"
       - name: Run C in sub folder
-        run: ./main_sub
+        run: |
+          cd folder1
+          ./main_sub
       - run: echo "🎉 Run successful"
