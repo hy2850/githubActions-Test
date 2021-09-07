@@ -56,6 +56,8 @@ jobs:
 
       - name: Run pintos
         run: |
-          cd pintos-kaist/threads/build
+          cd pintos-kaist
+          source ./activate
+          cd threads/build
           pintos -- -q run alarm-single
       - run: echo "🎉 Run successful"
