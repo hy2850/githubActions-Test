@@ -6,7 +6,7 @@ jobs:
     steps: 
       - name: Where am I?
         run : pwd
-        run : ls
+      - run : ls
       - name: Compile C in root folder
         run: gcc ${{ github.workspace }}/root_test.c -o main
       - run: echo "🎉 Compile successful"
@@ -19,7 +19,7 @@ jobs:
     steps: 
       - name: Move to folder
         run : cd ${{ github.workspace }}/folder1
-        run : ls
+      - run : ls
       - name: Compile C in sub folder
         run: gcc folder_test.c -o main_sub
       - run: echo "🎉 Compile successful"
