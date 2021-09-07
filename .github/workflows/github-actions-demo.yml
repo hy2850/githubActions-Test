@@ -6,8 +6,9 @@ jobs:
     steps: 
       - name: Where am I?
         run : pwd
+        run : ls
       - name: Compile C in root folder
-        run: gcc root_test.c -o main
+        run: gcc ${{ github.workspace }}/root_test.c -o main
       - run: echo "🎉 Compile successful"
       - name: Run C in root folder
         run: ./main
@@ -17,7 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Move to folder
-        run : cd ~/folder1
+        run : cd ${{ github.workspace }}/folder1
+        run : ls
       - name: Compile C in sub folder
         run: gcc folder_test.c -o main_sub
       - run: echo "🎉 Compile successful"
