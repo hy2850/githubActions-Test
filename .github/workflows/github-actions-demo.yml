@@ -21,7 +21,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Compile C in sub folder
-        run: gcc /folder1/folder_test.c -o main_sub
+        run: gcc ./folder1/folder_test.c -o main_sub
       - run: echo "🎉 Compile successful"
       - name: Run C in sub folder
         run: |
