@@ -6,13 +6,6 @@ jobs:
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Where am I?
-        run : |
-          pwd
-          ls
-          ls ${{ github.workspace }}
-          cd ${{ github.workspace }}
-          ls
       - name: Compile C in root folder
         run: gcc root_test.c -o main
       - run: echo "🎉 Compile successful"
@@ -23,6 +16,8 @@ jobs:
   folder-dir:
     runs-on: ubuntu-latest
     steps: 
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - name: Move to folder
         run : |
           cd folder1
